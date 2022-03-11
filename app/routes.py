@@ -5,7 +5,7 @@ from app.forms import LoginForm
 @app.route('/')
 @app.route('/index')
 def index():
-    user = {'username': 'Peter Reinink'}
+    user = {'username': 'Peter van der Reinink'}
 
     posts = [
         {
@@ -17,6 +17,8 @@ def index():
             'body': 'The Avengers movie was so cool!'
         }
     ]
+
+    print(f'SQLALCHEMY_DATABASE_URI = : {app.config["SQLALCHEMY_DATABASE_URI"]}')
 
     return render_template('index.html' , title='Home', user=user, posts=posts)
 
